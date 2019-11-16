@@ -3,13 +3,41 @@
 
 <head>
   <title>Numero</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="search" type="application/opensearchdescription+xml" href="opensearch.osdx" title="Numero">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="maths.js"></script>
-  <script src="script.js"></script>
 </head>
 
 <body>
-
+  <h1>Numero</h1>
+  <form>
+    <div class="form-group">
+      <input type="number" class="form-control" id="number" name="n" placeholder="Enter a number">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div id="information" class="d-none">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row">number</th>
+          <td id="number-val"></td>
+        </tr>
+        <tr>
+          <th scope="row">digits</th>
+          <td id="digits-val"></td>
+        </tr>
+        <tr>
+          <th scope="row">sign</th>
+          <td id="sign-val"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>

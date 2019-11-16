@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>Numero</ShortName>
+    <LongName>Numero - The number search</LongName>
+    <Description>Get information about numbers on Numero</Description>
+    <Tags>numero number maths</Tags>
+    <SyndicationRight>open</SyndicationRight>
+    <Query role="example" searchTerms="5"/>
+    <Image height="16" width="16" type="image/vnd.microsoft.icon">https://numero.lelux.net/favicon.ico</Image>
+    <!-- <Image height="64" width="64" type="image/png">https://numero.name/demo/opensearch64.png</Image> -->
+    <Url type="text/html" template="https://numero.lelux.net/?n={searchTerms}"/>
+</OpenSearchDescription>

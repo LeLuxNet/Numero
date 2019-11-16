@@ -1,20 +1,21 @@
-function getInformations(number) {
+function getInformation(number) {
   var numberString = number.toString();
   var absoluteValue = (number < 0) ? -number : number;
   var sign = 0;
+  var signSymbol = "0";
   if (number > 0) {
     sign = 1;
+    signSymbol = "+";
   } else if (number < 0) {
     sign = -1;
+    signSymbol = "-";
   }
 
+  var digits = numberString.length;
   var crossSum = 0;
   var absoluteValueString = absoluteValue.toString();
   for (var i = 0; i < absoluteValueString.length; i++) {
     crossSum += parseInt(absoluteValueString[i]);
-  }
-  if (sign === -1) {
-    crossSum *= -1;
   }
 
   var divider = [];
@@ -24,12 +25,19 @@ function getInformations(number) {
     }
   }
 
+  if (sign === -1) {
+    crossSum *= -1;
+    digits--;
+  }
+
   var fibonacciIndexes = getFibonacciIndexes(number);
   var catalanNumberIndexes = getCatalanNumberIndexes(number);
 
   return {
     number: number,
     sign: sign,
+    signSymbol: signSymbol,
+    additiveInverse: -number,
     absoluteValue: absoluteValue,
     squareNumber: number * number,
     squareRoot: Math.sqrt(number),
@@ -37,7 +45,7 @@ function getInformations(number) {
     base8: number.toString(8),
     base16: number.toString(16),
     crossSum: crossSum,
-    digits: numberString.length,
+    digits: digits,
     reciprocal: 1 / number,
     sinus: Math.sin(number),
     cosinus: Math.cos(number),
