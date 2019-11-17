@@ -6,21 +6,22 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="search" type="application/opensearchdescription+xml" href="opensearch.osdx" title="Numero">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="maths.js"></script>
 </head>
 
-<body>
+<body class="pl-3 pt-3">
   <h1>Numero</h1>
-  <form>
-    <div class="form-group">
+  <form class="form-inline mb-3">
+    <div class="form-group mr-2 mb-0">
       <input type="number" class="form-control" id="number" name="n" placeholder="Enter a number">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   <div id="information" class="d-none">
-    <table class="table">
+    <table class="table table-striped">
       <tbody>
         <tr>
           <th scope="row">Number</th>
