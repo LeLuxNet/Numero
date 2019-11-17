@@ -12,11 +12,8 @@ function getInformation(number) {
   }
 
   var digits = numberString.length;
-  var crossSum = 0;
-  var absoluteValueString = absoluteValue.toString();
-  for (var i = 0; i < absoluteValueString.length; i++) {
-    crossSum += parseInt(absoluteValueString[i]);
-  }
+  var digitSum = positiveDigitSum(absoluteValue);
+  var digitalRoot = positiveDigitSum(absoluteValue, true);
 
   var divider = [];
   for (var i = 1; i <= number; i++) {
@@ -26,25 +23,29 @@ function getInformation(number) {
   }
 
   if (sign === -1) {
-    crossSum *= -1;
+    digitSum *= -1;
     digits--;
   }
 
-  var fibonacciIndexes = getFibonacciIndexes(number);
+  var fibonacciNumberIndexes = getFibonacciNumberIndexes(number);
   var catalanNumberIndexes = getCatalanNumberIndexes(number);
 
   return {
     number: number,
+    previosNumber: number - 1,
+    nextNumber: number + 1,
     sign: sign,
     signSymbol: signSymbol,
     additiveInverse: -number,
     absoluteValue: absoluteValue,
     squareNumber: number * number,
     squareRoot: Math.sqrt(number),
+    cubeRoot: Math.cbrt(number),
     base2: number.toString(2),
     base8: number.toString(8),
     base16: number.toString(16),
-    crossSum: crossSum,
+    digitSum: digitSum,
+    digitalRoot: digitalRoot,
     digits: digits,
     reciprocal: 1 / number,
     sinus: Math.sin(number),
@@ -53,14 +54,29 @@ function getInformation(number) {
     cotangens: 1 / Math.tan(number),
     divider: divider,
     isPrime: divider.length === 2,
-    isFibonacci: fibonacciIndexes.length !== 0,
-    fibonacciIndexes: fibonacciIndexes,
+    isFibonacciNumber: fibonacciNumberIndexes.length !== 0,
+    fibonacciNumberIndexes: fibonacciNumberIndexes,
     isCatalanNumber: catalanNumberIndexes.length !== 0,
     catalanNumberIndexes: catalanNumberIndexes
   }
 }
 
-function getFibonacciIndexes(n) {
+// Only use this function with positive numbers
+function positiveDigitSum(number, singleDigit) {
+  var string = number.toString();
+  var result = 0;
+  for (var i = 0; i < string.length; i++) {
+    result += parseInt(string[i]);
+  }
+  console.log(result);
+  if (!singleDigit || result <= 9) {
+    return result;
+  } else {
+    return positiveDigitSum(result, true);
+  }
+}
+
+function getFibonacciNumberIndexes(n) {
   if (n === 0) {
     return [1];
   } else if (n === 1) {
