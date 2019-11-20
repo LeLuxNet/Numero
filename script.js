@@ -11,6 +11,43 @@ function findGetParameter(parameterName) {
   return result;
 }
 
+var browserLanguage = navigator.language || navigator.userLanguage;
+// var browserLanguage = "en";
+
+var lang = langEn;
+if(browserLanguage.startsWith("de")) {
+  lang = langDe;
+}
+
+if(lang.number) {
+  $("#number")[0].placeholder = lang.enterANumber;
+  $("#submit").text(lang.submit);
+
+  $("#number-key").text(lang.number);
+  $("#previos-number-key").text(lang.previosNumber);
+  $("#next-number-key").text(lang.nextNumber);
+  $("#digits-key").text(lang.digits);
+  $("#sign-key").text(lang.sign);
+  $("#absolute-value-key").text(lang.absoluteValue);
+  $("#additive-inverse-key").text(lang.additiveInverse);
+  $("#digit-sum-key").text(lang.digitSum);
+  $("#digital-root-key").text(lang.digitalRoot);
+  $("#reciprocal-key").text(lang.reciprocal);
+  $("#square-root-key").text(lang.squareRoot);
+  $("#cube-root-key").text(lang.cubeRoot);
+  $("#base-2-key").text(lang.base2);
+  $("#base-8-key").text(lang.base8);
+  $("#base-16-key").text(lang.base16);
+  $("#sinus-key").text(lang.sinus);
+  $("#cosinus-key").text(lang.cosinus);
+  $("#tangens-key").text(lang.tangens);
+  $("#cotangens-key").text(lang.cotangens);
+  $("#divider-key").text(lang.divider);
+  $("#prime-key").text(lang.prime);
+  $("#fibonacci-number-key").text(lang.fibonacciNumber);
+  $("#catalan-number-key").text(lang.catalanNumber);
+}
+
 var number = parseInt(findGetParameter("n"));
 if (isFinite(number)) {
   var info = getInformation(number);
@@ -35,7 +72,7 @@ if (isFinite(number)) {
   $("#tangens-val").html(getNumberLink(info.tangens));
   $("#cotangens-val").html(getNumberLink(info.cotangens));
   $("#divider-val").html(getLinkedNumerList(info.divider));
-  $("#prime-val").html(info.isPrime ? "Yes" : "No");
+  $("#prime-val").html(info.isPrime ? lang.yes : lang.no);
   $("#fibonacci-number-val").html(getIsWithNumbers(info.isFibonacciNumber, info.fibonacciNumberIndexes));
   $("#catalan-number-val").html(getIsWithNumbers(info.isCatalanNumber, info.catalanNumberIndexes));
 
@@ -45,7 +82,7 @@ if (isFinite(number)) {
 }
 
 function getIsWithNumbers(is, numbers) {
-  return is ? "Yes (" + getLinkedNumerList(numbers) + ")" : "No";
+  return is ? lang.yes + " (" + getLinkedNumerList(numbers) + ")" : lang.no;
 }
 
 function getLinkedNumerList(numbers) {

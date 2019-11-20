@@ -10,6 +10,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="maths.js"></script>
+  <script src="lang.js"></script>
 </head>
 
 <body class="pl-3 pt-3">
@@ -18,101 +19,101 @@
     <div class="form-group mr-2 mb-0">
       <input type="number" class="form-control" id="number" name="n" placeholder="Enter a number">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
   </form>
   <div id="information" class="d-none">
     <table class="table table-striped">
       <tbody>
         <tr>
-          <th scope="row">Number</th>
+          <th id="number-key" scope="row">Number</th>
           <td id="number-val"></td>
         </tr>
         <tr>
-          <th scope="row">Previos number</th>
+          <th id="previos-number-key" scope="row">Previos number</th>
           <td id="previos-number-val"></td>
         </tr>
         <tr>
-          <th scope="row">Next number</th>
+          <th id="next-number-key" scope="row">Next number</th>
           <td id="next-number-val"></td>
         </tr>
         <tr>
-          <th scope="row">Absolute value</th>
+          <th id="absolute-value-key" scope="row">Absolute value</th>
           <td id="absolute-value-val"></td>
         </tr>
         <tr>
-          <th scope="row">Additive inverse</th>
+          <th id="additive-inverse-key" scope="row">Additive inverse</th>
           <td id="additive-inverse-val"></td>
         </tr>
         <tr>
-          <th scope="row">Digits</th>
+          <th id="digits-key" scope="row">Digits</th>
           <td id="digits-val"></td>
         </tr>
         <tr>
-          <th scope="row">Sign</th>
+          <th id="sign-key" scope="row">Sign</th>
           <td id="sign-val"></td>
         </tr>
         <tr>
-          <th scope="row">Digit sum</th>
+          <th id="digit-sum-key" scope="row">Digit sum</th>
           <td id="digit-sum-val"></td>
         </tr>
         <tr>
-          <th scope="row">Digital root</th>
+          <th id="digital-root-key" scope="row">Digital root</th>
           <td id="digital-root-val"></td>
         </tr>
         <tr>
-          <th scope="row">Reciprocal</th>
+          <th id="reciprocal-key" scope="row">Reciprocal</th>
           <td id="reciprocal-val"></td>
         </tr>
         <tr>
-          <th scope="row">Square root</th>
+          <th id="square-root-key" scope="row">Square root</th>
           <td id="square-root-val"></td>
         </tr>
         <tr>
-          <th scope="row">Cube root</th>
+          <th id="cube-root-key" scope="row">Cube root</th>
           <td id="cube-root-val"></td>
         </tr>
         <tr>
-          <th scope="row">Binary (base 2)</th>
+          <th id="base-2-key" scope="row">Binary (base 2)</th>
           <td id="base-2-val"></td>
         </tr>
         <tr>
-          <th scope="row">Octal (base 8)</th>
+          <th id="base-8-key" scope="row">Octal (base 8)</th>
           <td id="base-8-val"></td>
         </tr>
         <tr>
-          <th scope="row">Hexadecimal (base 16)</th>
+          <th id="base-16-key" scope="row">Hexadecimal (base 16)</th>
           <td id="base-16-val"></td>
         </tr>
         <tr>
-          <th scope="row">Sinus</th>
+          <th id="sinus-key" scope="row">Sinus</th>
           <td id="sinus-val"></td>
         </tr>
         <tr>
-          <th scope="row">Cosinus</th>
+          <th id="cosinus-key" scope="row">Cosinus</th>
           <td id="cosinus-val"></td>
         </tr>
         <tr>
-          <th scope="row">Tangens</th>
+          <th id="tangens-key" scope="row">Tangens</th>
           <td id="tangens-val"></td>
         </tr>
         <tr>
-          <th scope="row">Cotangens</th>
+          <th id="cotangens-key" scope="row">Cotangens</th>
           <td id="cotangens-val"></td>
         </tr>
         <tr>
-          <th scope="row">Divider</th>
+          <th id="divider-key" scope="row">Divider</th>
           <td id="divider-val"></td>
         </tr>
         <tr>
-          <th scope="row">Prime</th>
+          <th id="prime-key" scope="row">Prime</th>
           <td id="prime-val"></td>
         </tr>
         <tr>
-          <th scope="row">Fibonacci number</th>
+          <th id="fibonacci-number-key" scope="row">Fibonacci number</th>
           <td id="fibonacci-number-val"></td>
         </tr>
         <tr>
-          <th scope="row">Catalan number</th>
+          <th id="catalan-number-key" scope="row">Catalan number</th>
           <td id="catalan-number-val"></td>
         </tr>
       </tbody>
