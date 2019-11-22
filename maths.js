@@ -1,3 +1,8 @@
+const parity = Object.freeze({
+  ODD: 0,
+  EVAN: 1
+});
+
 function getInformation(number) {
   var numberString = number.toString();
   var absoluteValue = (number < 0) ? -number : number;
@@ -38,6 +43,7 @@ function getInformation(number) {
     signSymbol: signSymbol,
     additiveInverse: -number,
     absoluteValue: absoluteValue,
+    parity: number % 2 === 0 ? parity.EVAN : parity.ODD,
     squareNumber: number * number,
     squareRoot: Math.sqrt(number),
     cubeRoot: Math.cbrt(number),

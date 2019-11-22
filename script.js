@@ -28,6 +28,7 @@ if(lang.number) {
   $("#next-number-key").text(lang.nextNumber);
   $("#digits-key").text(lang.digits);
   $("#sign-key").text(lang.sign);
+  $("#parity-key").text(lang.parity);
   $("#absolute-value-key").text(lang.absoluteValue);
   $("#additive-inverse-key").text(lang.additiveInverse);
   $("#digit-sum-key").text(lang.digitSum);
@@ -57,6 +58,7 @@ if (isFinite(number)) {
   $("#next-number-val").html(getNumberLink(info.nextNumber));
   $("#digits-val").html(getNumberLink(info.digits));
   $("#sign-val").html(info.sign === 0 ? getNumberLink(0) : info.signSymbol);
+  $("#parity-val").html(info.parity === parity.EVAN ? lang.parityEvan : lang.parityOdd);
   $("#absolute-value-val").html(getNumberLink(info.absoluteValue));
   $("#additive-inverse-val").html(getNumberLink(info.additiveInverse));
   $("#digit-sum-val").html(getNumberLink(info.digitSum));

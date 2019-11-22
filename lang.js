@@ -1,6 +1,9 @@
 const langEn = {
   yes: "Yes",
-  no: "No"
+  no: "No",
+
+  parityEvan: "evan",
+  parityOdd: "odd"
 }
 
 const langDe = {
@@ -8,12 +11,15 @@ const langDe = {
   submit: "Senden",
   yes: "Ja",
   no: "Nein",
+  parityEvan: "gerade",
+  parityOdd: "ungerade",
 
   number: "Zahl",
   previosNumber: "vorherige Zahl",
   nextNumber: "n\u00e4chste Zahl",
   digits: "Stellen",
   sign: "Vorzeichen",
+  parity: "Parit\u00e4t",
   absoluteValue: "Betrag",
   additiveInverse: "Gegenzahl",
   digitSum: "Quersumme",
