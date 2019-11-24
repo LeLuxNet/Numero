@@ -45,6 +45,7 @@ function getInformation(number) {
     absoluteValue: absoluteValue,
     parity: number % 2 === 0 ? parity.EVAN : parity.ODD,
     squareNumber: number * number,
+    cube: number * number * number,
     squareRoot: Math.sqrt(number),
     cubeRoot: Math.cbrt(number),
     base2: number.toString(2),

@@ -25,6 +25,8 @@ const langDe = {
   digitSum: "Quersumme",
   digitalRoot: "einstellige Quersumme",
   reciprocal: "Kehrwert",
+  squareNumber: "Quadratzahl",
+  cube: "Kubikzahl",
   squareRoot: "Quadratwurzel",
   cubeRoot: "Kubikwurzel",
   base2: "Bin\u00e4r (Basis 2)",

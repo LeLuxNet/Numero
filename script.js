@@ -34,6 +34,8 @@ if(lang.number) {
   $("#digit-sum-key").text(lang.digitSum);
   $("#digital-root-key").text(lang.digitalRoot);
   $("#reciprocal-key").text(lang.reciprocal);
+  $("#square-number-key").text(lang.squareNumber);
+  $("#cube-key").text(lang.cube);
   $("#square-root-key").text(lang.squareRoot);
   $("#cube-root-key").text(lang.cubeRoot);
   $("#base-2-key").text(lang.base2);
@@ -64,6 +66,8 @@ if (isFinite(number)) {
   $("#digit-sum-val").html(getNumberLink(info.digitSum));
   $("#digital-root-val").html(getNumberLink(info.digitalRoot));
   $("#reciprocal-val").html(getNumberLink(info.reciprocal));
+  $("#square-number-val").html(getNumberLink(info.squareNumber));
+  $("#cube-val").html(getNumberLink(info.cube));
   $("#square-root-val").html(getNumberLink(info.squareRoot));
   $("#cube-root-val").html(getNumberLink(info.cubeRoot));
   $("#base-2-val").html(getNumberLink(info.base2));
