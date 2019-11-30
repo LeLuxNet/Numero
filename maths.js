@@ -88,7 +88,6 @@ function positiveDigitSum(number, singleDigit) {
   for (var i = 0; i < string.length; i++) {
     result += parseInt(string[i]);
   }
-  console.log(result);
   if (!singleDigit || result <= 9) {
     return result;
   } else {
