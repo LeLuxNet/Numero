@@ -41,10 +41,10 @@ if (lang.number) {
   $("#base-2-key").text(lang.base2);
   $("#base-8-key").text(lang.base8);
   $("#base-16-key").text(lang.base16);
-  $("#sinus-key").text(lang.sinus);
-  $("#cosinus-key").text(lang.cosinus);
-  $("#tangens-key").text(lang.tangens);
-  $("#cotangens-key").text(lang.cotangens);
+  $("#sine-key").text(lang.sine);
+  $("#cosine-key").text(lang.cosine);
+  $("#tangent-key").text(lang.tangent);
+  $("#cotangent-key").text(lang.cotangent);
   $("#divider-key").text(lang.divider);
   $("#prime-key").text(lang.prime);
   $("#fibonacci-number-key").text(lang.fibonacciNumber);
@@ -78,8 +78,7 @@ function run(load) {
     $("#number").val("");
     history.pushState("", "", "?n=" + number);
   }
-  number = parseInt(number);
-  if (isFinite(number)) {
+  if (!isNaN(number)) {
     var info = getInformation(number);
     console.log(info);
 
@@ -98,13 +97,13 @@ function run(load) {
     $("#cube-val").html(getNumberLink(info.cube));
     $("#square-root-val").html(getNumberLink(info.squareRoot));
     $("#cube-root-val").html(getNumberLink(info.cubeRoot));
-    $("#base-2-val").html(getNumberLink(info.base2));
-    $("#base-8-val").html(getNumberLink(info.base8));
-    $("#base-16-val").html(getNumberLink(info.base16));
-    $("#sinus-val").html(getNumberLink(info.sinus));
-    $("#cosinus-val").html(getNumberLink(info.cosinus));
-    $("#tangens-val").html(getNumberLink(info.tangens));
-    $("#cotangens-val").html(getNumberLink(info.cotangens));
+    $("#base-2-val").html(info.base2);
+    $("#base-8-val").html(info.base8);
+    $("#base-16-val").html(info.base16);
+    $("#sine-val").html(getNumberLink(info.sine));
+    $("#cosine-val").html(getNumberLink(info.cosine));
+    $("#tangent-val").html(getNumberLink(info.tangent));
+    $("#cotangent-val").html(getNumberLink(info.cotangent));
     $("#divider-val").html(getLinkedNumerList(info.divider));
     $("#prime-val").html(info.isPrime ? lang.yes : lang.no);
     $("#fibonacci-number-val").html(getIsWithNumbers(info.isFibonacciNumber, info.fibonacciNumberIndexes));

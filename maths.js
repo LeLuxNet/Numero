@@ -19,8 +19,8 @@ const sign = Object.freeze({
 });
 
 function getInformation(number) {
+  var number = new Decimal(number);
   var numberString = number.toString();
-  var absoluteValue = (number < 0) ? -number : number;
   var numberSign;
   if (number > 0) {
     numberSign = sign.POSITIVE;
@@ -29,49 +29,52 @@ function getInformation(number) {
   } else {
     numberSign = sign.ZERO;
   }
+  var absoluteValue = number.abs();
 
-  var digits = numberString.length;
+  var digits = new Decimal(numberString.length);
   var digitSum = positiveDigitSum(absoluteValue);
-  var digitalRoot = positiveDigitSum(absoluteValue, true);
+  var digitalRoot = positiveDigitSum(digitSum, true);
 
   var divider = [];
-  for (var i = 1; i <= number; i++) {
-    if (number % i === 0) {
+  for (var i = new Decimal(1); i.lte(number); i = i.add(1)) {
+    if (number.mod(i).eq(0)) {
       divider.push(i);
     }
   }
 
-  if (sign === -1) {
-    digitSum *= -1;
-    digits--;
+  if (numberSign === sign.NEGATIVE) {
+    digitSum.mul(-1);
+    digits.sub(1);
   }
+
+  var tangent = number.tan();
 
   var fibonacciNumberIndexes = getFibonacciNumberIndexes(number);
   var catalanNumberIndexes = getCatalanNumberIndexes(number);
 
   return {
     number: number,
-    previosNumber: number - 1,
-    nextNumber: number + 1,
+    previosNumber: number.sub(1),
+    nextNumber: number.add(1),
     sign: numberSign,
-    additiveInverse: -number,
+    additiveInverse: number.neg(),
     absoluteValue: absoluteValue,
-    parity: number % 2 === 0 ? parity.EVAN : parity.ODD,
-    squareNumber: number * number,
-    cube: number * number * number,
-    squareRoot: Math.sqrt(number),
-    cubeRoot: Math.cbrt(number),
-    base2: number.toString(2),
-    base8: number.toString(8),
-    base16: number.toString(16),
+    parity: number.mod(2).eq(0) ? parity.EVAN : parity.ODD,
+    squareNumber: number.pow(2),
+    cube: number.pow(3),
+    squareRoot: number.sqrt(),
+    cubeRoot: number.cbrt(),
+    base2: number.toBinary(),
+    base8: number.toOctal(),
+    base16: number.toHex(),
     digitSum: digitSum,
     digitalRoot: digitalRoot,
     digits: digits,
-    reciprocal: 1 / number,
-    sinus: Math.sin(number),
-    cosinus: Math.cos(number),
-    tangens: Math.tan(number),
-    cotangens: 1 / Math.tan(number),
+    reciprocal: new Decimal(1).div(number),
+    sine: number.sin(),
+    cosine: number.cos(),
+    tangent: tangent,
+    cotangent: new Decimal(1).div(tangent),
     divider: divider,
     isPrime: divider.length === 2,
     isFibonacciNumber: fibonacciNumberIndexes.length !== 0,
@@ -84,63 +87,64 @@ function getInformation(number) {
 // Only use this function with positive numbers
 function positiveDigitSum(number, singleDigit) {
   var string = number.toString();
-  var result = 0;
+  var result = new Decimal(0);
   for (var i = 0; i < string.length; i++) {
-    result += parseInt(string[i]);
+    result = result.add(string[i]);
   }
-  if (!singleDigit || result <= 9) {
+  if (!singleDigit || result.lte(9)) {
     return result;
   } else {
     return positiveDigitSum(result, true);
   }
 }
 
-function getFibonacciNumberIndexes(n) {
-  if (n === 0) {
-    return [1];
-  } else if (n === 1) {
-    return [2, 3];
+function getFibonacciNumberIndexes(number) {
+  if (number.eq(0)) {
+    return [new Decimal(1)];
+  } else if (number.eq(1)) {
+    return [new Decimal(2), new Decimal(3)];
   } else {
-    var a = 1;
-    var b = 1;
-    var c = 2;
-    var index = 4;
-    while (c < n) {
+    var a = new Decimal(1);
+    var b = new Decimal(1);
+    var c = new Decimal(2);
+    var index = new Decimal(4);
+    while (c.lt(number)) {
       a = b;
       b = c;
-      c = a + b;
-      index++;
+      c = a.add(b);
+      index = index.add(1);
     }
-    return (c === n) ? [index] : [];
+    return c.eq(number) ? [index] : [];
   }
 }
 
 function getCatalanNumberIndexes(number) {
-  if (number === 1) {
-    return [0, 1];
+  if (number.eq(1)) {
+    return [new Decimal(0), new Decimal(1)];
   }
-  var a = 2;
-  var index = 2;
-  while (a < number) {
-    a = getCatalanNumber(++index);
+  var a = new Decimal(2);
+  var index = new Decimal(2);
+  while (a.lt(number)) {
+    index = index.add(1);
+    a = getCatalanNumber(index);
   }
-  return (number === a) ? [index] : [];
+  return (number.eq(a)) ? [index] : [];
 }
 
 function getCatalanNumber(n) {
-  if (n === 0) {
-    return 1;
+  if (n.eq(0)) {
+    return new Decimal(1);
   }
-  return (1 / (n + 1)) * getBinomialCoefficient(2 * n, n);
+  return new Decimal(1).div(n.add(1)).mul(getBinomialCoefficient(n.mul(2), n));
 }
 
-function getFactorial(n) {
-  if (n <= 1) {
-    return n;
+function getFactorial(number) {
+  if (number.eq(1) || number.eq(0)) {
+    return new Decimal(1);
   }
-  return n * getFactorial(n - 1);
+  return number.mul(getFactorial(number.sub(1)));
 }
 
 function getBinomialCoefficient(n, k) {
-  return getFactorial(n) / (getFactorial(k) * getFactorial(n - k));
+  return getFactorial(n).div(getFactorial(k).mul(getFactorial(n.sub(k))));
 }
