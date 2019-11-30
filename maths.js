@@ -3,17 +3,31 @@ const parity = Object.freeze({
   EVAN: 1
 });
 
+const sign = Object.freeze({
+  POSITIVE: {
+    number: 1,
+    string: "+"
+  },
+  ZERO: {
+    number: 0,
+    string: 0
+  },
+  NEGATIVE: {
+    number: -1,
+    string: "-"
+  }
+});
+
 function getInformation(number) {
   var numberString = number.toString();
   var absoluteValue = (number < 0) ? -number : number;
-  var sign = 0;
-  var signSymbol = "0";
+  var numberSign;
   if (number > 0) {
-    sign = 1;
-    signSymbol = "+";
+    numberSign = sign.POSITIVE;
   } else if (number < 0) {
-    sign = -1;
-    signSymbol = "-";
+    numberSign = sign.NEGATIVE;
+  } else {
+    numberSign = sign.ZERO;
   }
 
   var digits = numberString.length;
@@ -39,8 +53,7 @@ function getInformation(number) {
     number: number,
     previosNumber: number - 1,
     nextNumber: number + 1,
-    sign: sign,
-    signSymbol: signSymbol,
+    sign: numberSign,
     additiveInverse: -number,
     absoluteValue: absoluteValue,
     parity: number % 2 === 0 ? parity.EVAN : parity.ODD,

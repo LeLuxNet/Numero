@@ -15,11 +15,11 @@ var browserLanguage = navigator.language || navigator.userLanguage;
 // var browserLanguage = "en";
 
 var lang = langEn;
-if(browserLanguage.startsWith("de")) {
+if (browserLanguage.startsWith("de")) {
   lang = langDe;
 }
 
-if(lang.number) {
+if (lang.number) {
   $("#number")[0].placeholder = lang.enterANumber;
   $("#submit").text(lang.submit);
 
@@ -59,7 +59,7 @@ if (isFinite(number)) {
   $("#previos-number-val").html(getNumberLink(info.previosNumber));
   $("#next-number-val").html(getNumberLink(info.nextNumber));
   $("#digits-val").html(getNumberLink(info.digits));
-  $("#sign-val").html(info.sign === 0 ? getNumberLink(0) : info.signSymbol);
+  $("#sign-val").html(getNumberLink(info.sign.string));
   $("#parity-val").html(info.parity === parity.EVAN ? lang.parityEvan : lang.parityOdd);
   $("#absolute-value-val").html(getNumberLink(info.absoluteValue));
   $("#additive-inverse-val").html(getNumberLink(info.additiveInverse));
