@@ -62,20 +62,22 @@ function getLinkedNumerList(numbers) {
 function getNumberLink(number) {
   if (isFinite(number)) {
     var parts = number.toString().split(".");
-    return "<a href='?n=" + parts[0] + "'>" + parts[0] + "</a>" +
+    return "<a href='javascript:run(false, " + parts[0] + ")'>" + parts[0] + "</a>" +
       (parts.length > 1 ? "." + parts[1] : "");
   } else {
     return number;
   }
 }
 
-function run(load) {
+function run(load, number) {
   var number;
   if (load) {
     number = findGetParameter("n");
   } else {
-    number = $("#number").val();
-    $("#number").val("");
+    if(!number) {
+      number = $("#number").val();
+      $("#number").val("");
+    }
     history.pushState("", "", "?n=" + number);
   }
   if (!isNaN(number)) {
