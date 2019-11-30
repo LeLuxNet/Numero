@@ -38,6 +38,7 @@ if (lang.number) {
   $("#cube-key").text(lang.cube);
   $("#square-root-key").text(lang.squareRoot);
   $("#cube-root-key").text(lang.cubeRoot);
+  $("#factorial-key").text(lang.factorial);
   $("#base-2-key").text(lang.base2);
   $("#base-8-key").text(lang.base8);
   $("#base-16-key").text(lang.base16);
@@ -99,6 +100,7 @@ function run(load, number) {
     $("#cube-val").html(getNumberLink(info.cube));
     $("#square-root-val").html(getNumberLink(info.squareRoot));
     $("#cube-root-val").html(getNumberLink(info.cubeRoot));
+    $("#factorial-val").html(getNumberLink(info.factorial));
     $("#base-2-val").html(info.base2);
     $("#base-8-val").html(info.base8);
     $("#base-16-val").html(info.base16);

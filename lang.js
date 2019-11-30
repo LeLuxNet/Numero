@@ -29,6 +29,7 @@ const langDe = {
   cube: "Kubikzahl",
   squareRoot: "Quadratwurzel",
   cubeRoot: "Kubikwurzel",
+  factorial: "Fakult\u00e4t",
   base2: "Bin\u00e4r (Basis 2)",
   base8: "Oktal (Basis 8)",
   base16: "Hexadezimal (Basis 16)",

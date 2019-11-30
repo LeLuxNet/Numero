@@ -64,6 +64,7 @@ function getInformation(number) {
     cube: number.pow(3),
     squareRoot: number.sqrt(),
     cubeRoot: number.cbrt(),
+    factorial: getFactorial(number),
     base2: number.toBinary(),
     base8: number.toOctal(),
     base16: number.toHex(),
@@ -139,10 +140,12 @@ function getCatalanNumber(n) {
 }
 
 function getFactorial(number) {
-  if (number.eq(1) || number.eq(0)) {
-    return new Decimal(1);
+  var result = new Decimal(1);
+  while(!number.eq(1)) {
+    result = result.mul(number);
+    number = number.sub(1);
   }
-  return number.mul(getFactorial(number.sub(1)));
+  return result;
 }
 
 function getBinomialCoefficient(n, k) {
