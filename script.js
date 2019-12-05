@@ -85,6 +85,15 @@ function getNumberLink(number) {
   }
 }
 
+function isNumber(number) {
+  try {
+    new Decimal(number);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function run(load, number) {
   var number;
   if (load) {
@@ -96,7 +105,7 @@ function run(load, number) {
     }
     history.pushState("", "", "?n=" + number);
   }
-  if (!isNaN(number)) {
+  if (isNumber(number)) {
     var info = getInformation(number);
     console.log(info);
 

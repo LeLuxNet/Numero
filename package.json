@@ -1,0 +1,26 @@
+{
+  "name": "numero",
+  "version": "1.2.0",
+  "description": "Get information about numbers with Numero",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeLuxNet/Numero.git"
+  },
+  "keywords": [
+    "numbers",
+    "math"
+  ],
+  "author": "LeLuxNet",
+  "bugs": {
+    "url": "https://github.com/LeLuxNet/Numero/issues"
+  },
+  "homepage": "https://github.com/LeLuxNet/Numero#readme",
+  "devDependencies": {
+    "electron": "^7.1.3"
+  }
+}
