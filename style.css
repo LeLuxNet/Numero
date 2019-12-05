@@ -1,3 +1,15 @@
 #number-key {
   width: 20rem;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark);
+    color: white;
+  }
+
+  .table {
+    color: #fff;
+    background-color: #343a40;
+  }
+}

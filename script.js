@@ -52,6 +52,21 @@ if (lang.number) {
   $("#catalan-number-key").text(lang.catalanNumber);
 }
 
+function darkMode(is) {
+  if (is) {
+    $(".table").addClass("table-dark");
+  } else {
+    $(".table").removeClass("table-dark");
+  }
+}
+
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  darkMode(true);
+}
+
+window.matchMedia("(prefers-color-scheme: dark)").addListener(e => e.matches && darkMode(true));
+window.matchMedia("(prefers-color-scheme: light)").addListener(e => e.matches && darkMode(false));
+
 function getIsWithNumbers(is, numbers) {
   return is ? lang.yes + " (" + getLinkedNumerList(numbers) + ")" : lang.no;
 }
@@ -75,7 +90,7 @@ function run(load, number) {
   if (load) {
     number = findGetParameter("n");
   } else {
-    if(!number) {
+    if (!number) {
       number = $("#number").val();
       $("#number").val("");
     }
