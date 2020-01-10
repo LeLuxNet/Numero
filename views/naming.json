@@ -1,0 +1,136 @@
+{
+  "list": {
+    "number": {
+      "en": "Number",
+      "de": "Zahl"
+    },
+    "previos-number": {
+      "en": "Previos number",
+      "de": "vorherige Zahl"
+    },
+    "next-number": {
+      "en": "Next number",
+      "de": "nächste Zahl"
+    },
+    "absolute-value": {
+      "en": "Absolute value",
+      "de": "Betrag"
+    },
+    "additive-inverse": {
+      "en": "Additive inverse",
+      "de": "Gegenzahl"
+    },
+    "digits": {
+      "en": "Digits",
+      "de": "Stellen"
+    },
+    "sign": {
+      "en": "Sign",
+      "de": "Vorzeichen"
+    },
+    "parity": {
+      "en": "Parity",
+      "de": "Parität"
+    },
+    "digit-sum": {
+      "en": "Digit sum",
+      "de": "Quersumme"
+    },
+    "digital-root": {
+      "en": "Digital root",
+      "de": "einstellige Quersumme"
+    },
+    "reciprocal": {
+      "en": "Reciprocal",
+      "de": "Kehrwert"
+    },
+    "square-number": {
+      "en": "Square number",
+      "de": "Quersumme"
+    },
+    "cube": {
+      "en": "Cube",
+      "de": "Kubikzahl"
+    },
+    "square-root": {
+      "en": "Square root",
+      "de": "Quadratzahl"
+    },
+    "cube-root": {
+      "en": "Cube root",
+      "de": "Kubikzahl"
+    },
+    "factorial": {
+      "en": "Factorial",
+      "de": "Fakultät"
+    },
+    "base-2": {
+      "en": "Binary (base 2)",
+      "de": "Binär (Basis 2)"
+    },
+    "base-8": {
+      "en": "Octal (base 8)",
+      "de": "Oktal (Basis 8)"
+    },
+    "base-16": {
+      "en": "Hexadecimal (base 16)",
+      "de": "Hexadezimal (Basis 16)"
+    },
+    "sine": {
+      "en": "Sine",
+      "de": "Sinus"
+    },
+    "cosine": {
+      "en": "Cosine",
+      "de": "Kosinus"
+    },
+    "tangent": {
+      "en": "Tangent",
+      "de": "Tangens"
+    },
+    "cotangent": {
+      "en": "Cotangent",
+      "de": "Kotangens"
+    },
+    "divider": {
+      "en": "Divider",
+      "de": "Teiler"
+    },
+    "prime": {
+      "en": "Prime",
+      "de": "Primzahl"
+    },
+    "fibonacci-number": {
+      "en": "Fibonacci number",
+      "de": "Fibonacci-Zahl"
+    },
+    "catalan-number": {
+      "en": "Catalan number",
+      "de": "Catalan-Zahl"
+    }
+  },
+  "words": {
+    "en": {
+      "yes": "Yes",
+      "no": "No",
+      "parityEvan": "evan",
+      "parityOdd": "odd"
+    },
+    "de": {
+      "yes": "Ja",
+      "no": "Nein",
+      "parityEvan": "gerade",
+      "parityOdd": "ungerade"
+    }
+  },
+  "naming": {
+    "calculate": {
+      "en": "Calculate",
+      "de": "Berechnen"
+    },
+    "enterNumber": {
+      "en": "Enter a number",
+      "de": "Gib eine Zahl ein"
+    }
+  }
+}

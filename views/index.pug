@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    title Numero
+
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    link(rel="stylesheet" type="text/css" href="style.css")
+    link(rel="search" type="application/opensearchdescription+xml" href="opensearch.osdx" title="Numero")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+    link(rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png")
+    link(rel="manifest" href="site.webmanifest")
+    link(rel="mask-icon" href="safari-pinned-tab.svg" color="#007bff")
+    meta(name="msapplication-TileColor" content="#007bff")
+    meta(name="theme-color" content="#ffffff")
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="decimal.min.js")
+    script(src="maths.js")
+    script(src="lang.js")
+
+    script
+      include matomo.js
+  body.pl-3.pt-3
+    h1 Numero
+    form.form-inline.mb-3(onsubmit="run(false); return false;")
+      div.form-group.mr-2.mb-0
+        input.form-control#number(type="number" placeholder=naming.enterNumber[locale])
+      button.btn.btn-primary#submit(type="submit") #{naming.calculate[locale]}
+    div.d-none#information
+      table.table.table-striped
+        tbody
+          each key in Object.keys(list)
+            tr
+              th(id=key + "-key" scope="row") #{list[key][locale]}
+              td(id=key + "-val")
+    script(src="script.js")
+html
