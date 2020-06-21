@@ -1,6 +1,11 @@
 var CACHE_NAME = 'numero-cache';
 var urlsToCache = [
-  'amdrpod
+  'apple-touch-icon.png',
+  'favicon-16x16.png',
+  'favicon-32x32.png',
+  'favicon.ico',
+  'icon-192x192.png',
+  'icon-512x512.png'
 ];
 self.addEventListener('install', function(event) {
   event.waitUntil(
